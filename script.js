@@ -6,7 +6,6 @@ document.getElementById('convertBtn').addEventListener('click', function () {
     fetch(`https://v6.exchangerate-api.com/v6/e5830fe60a1742458dfb2cca/latest/${fromCurrency}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         const exchangeRate = data.conversion_rates[toCurrency];  // value of 1 currency
         const convertedAmount = (amount * exchangeRate).toFixed(2);
         if(isNaN(amount) || amount <= 0){
